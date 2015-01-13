@@ -1,0 +1,30 @@
+{
+  "name": "react-router-bootstrap",
+  "version": "0.7.2",
+  "homepage": "https://github.com/mtscout6/react-router-bootstrap/issues",
+  "authors": [
+    "Matt Smith <mtscout6@gmail.com>"
+  ],
+  "description": "react-router and react-bootstrap compatible components",
+  "main": "./lib/index.js",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "react",
+    "react-router",
+    "react-bootstrap"
+  ],
+  "license": "Apache2",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react-bootstrap": "~0.13.0",
+    "react-router": "~0.11.6"
+  }
+}
