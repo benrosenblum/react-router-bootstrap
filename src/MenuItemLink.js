@@ -1,10 +1,13 @@
-var React = require('react');
+var React = require('react/addons');
+var { classSet } = React.addons;
 
-var NavItem = require('react-bootstrap/NavItem');
+var MenuItem = require('react-bootstrap/MenuItem');
 var { Navigation, State } = require('react-router');
 var LinkMixin = require('./LinkMixin');
 
-var NavItemLink = React.createClass({
+var joinClasses = require('react-bootstrap/utils/joinClasses');
+
+var MenuItemLink = React.createClass({
   mixins: [
     LinkMixin,
     Navigation,
@@ -17,6 +20,8 @@ var NavItemLink = React.createClass({
       params,
       query,
       active,
+      className,
+      onSelect, // Not going to use this, just stripping off the props!
       ...props} = this.props;
 
     if (this.props.active === undefined) {
@@ -24,15 +29,15 @@ var NavItemLink = React.createClass({
     }
 
     return (
-      <NavItem {...props}
+      <MenuItem {...props}
         href={this.getHref()}
-        active={active}
+        className={ joinClasses(className, classSet({ active: active })) }
         onClick={this.handleRouteTo}
-        ref="navItem">
+        ref="menuItem">
         {this.props.children}
-      </NavItem>
+      </MenuItem>
     );
   }
 });
 
-module.exports = NavItemLink;
+module.exports = MenuItemLink;

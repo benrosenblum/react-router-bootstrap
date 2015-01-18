@@ -1,12 +1,14 @@
 {
   "name": "react-router-bootstrap",
-  "version": "0.7.2",
+  "version": "0.8.2",
   "description": "react-router and react-bootstrap compatible components",
   "main": "./lib/index.js",
   "scripts": {
     "prepublish": "npm run build",
-    "build": "./node_modules/react-tools/bin/jsx -x js src lib && rm -rf lib/.module-cache",
-    "test": "xdg-open tests/0.11/index.html && xdg-open tests/0.12/index.html"
+    "build": "./node_modules/react-tools/bin/jsx --harmony -x js src lib && rm -rf lib/.module-cache",
+    "test": "./node_modules/.bin/karma start karma.conf.js --single-run",
+    "tdd": "./node_modules/.bin/karma start karma.conf.js",
+    "visual-test": "webpack-dev-server --config webpack.test.config"
   },
   "repository": {
     "type": "git",
@@ -31,7 +33,31 @@
     "react-router": ">=0.5.1"
   },
   "devDependencies": {
-    "react-tools": "^0.12.1"
+    "bootstrap": "^3.3.1",
+    "chai": "^1.10.0",
+    "css-loader": "^0.9.1",
+    "file-loader": "^0.8.1",
+    "jshint-loader": "^0.8.0",
+    "jsx-loader": "^0.12.2",
+    "karma": "^0.12.31",
+    "karma-chrome-launcher": "^0.1.7",
+    "karma-cli": "0.0.4",
+    "karma-mocha": "^0.1.10",
+    "karma-mocha-reporter": "^0.3.1",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "karma-webpack": "^1.5.0",
+    "less": "^2.2.0",
+    "less-loader": "^2.0.0",
+    "mocha": "^2.1.0",
+    "phantomjs": "^1.9.13",
+    "react": "^0.12.2",
+    "react-bootstrap": ">=0.12",
+    "react-router": ">=0.5.1",
+    "react-tools": "^0.12.1",
+    "style-loader": "^0.8.2",
+    "url-loader": "^0.5.5",
+    "webpack": "^1.4.15",
+    "webpack-dev-server": "^1.7.0"
   },
   "files": [
     "lib"
